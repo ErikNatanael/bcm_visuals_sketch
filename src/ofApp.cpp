@@ -10,6 +10,7 @@ void ofApp::setup(){
     ofSetVerticalSync(true);
 
     mainFbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA32F);
+    postShader.load("shaders/shPost/shader");
 }
 
 //--------------------------------------------------------------
@@ -195,9 +196,19 @@ void ofApp::draw(){
 
     mainFbo.end();
 
-    // Add some glitchy effects
-    ofSetColor(255, 255);
+    // Draw without effects
+    // ofSetColor(255, 255);
+    // mainFbo.draw(0, 0);
+
+    postShader.begin();
+    postShader.setUniformTexture("tex0", mainFbo.getTextureReference(), 0);
+    postShader.setUniform1f("amount", pow(ofRandom(1.0), 3));
+    postShader.setUniform1f("tint", 0.0);
+    postShader.setUniform1f("contrast", 0.0);
+    ofSetColor(255, 255, 255);
+    // ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight()); // doesn't give a texcoord
     mainFbo.draw(0, 0);
+    postShader.end();
 
     
 

@@ -75,4 +75,5 @@ class ofApp : public ofBaseApp{
 		ofEasyCam cam;
 
 		ofFbo mainFbo;
+		ofShader postShader;
 };
