@@ -9,7 +9,7 @@ void ofApp::setup(){
     
     ofSetVerticalSync(true);
 
-    mainFbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
+    mainFbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA32F);
 }
 
 //--------------------------------------------------------------
@@ -32,6 +32,7 @@ void ofApp::update(){
 void ofApp::draw(){
     ofBackground(0);
     mainFbo.begin();
+    glClear(GL_DEPTH_BUFFER_BIT); // Hve to do this when drawing depth stuff on an fbo
     ofSetColor(0, 10);
     ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
 
@@ -171,18 +172,10 @@ void ofApp::draw(){
         }
     }
 
-    
-
     ofSetColor(255);
     ofDrawRectangle(0, ofGetHeight() - margin_bottom, ofGetWidth(), margin_bottom);
     ofSetColor(0);
     font.drawString(active_name, 20, ofGetHeight() - margin_bottom*0.25);
-
-    mainFbo.end();
-
-    // Add some glitchy effects
-    ofSetColor(255, 255);
-    mainFbo.draw(0, 0);
 
     ofEnableDepthTest();
     ofPushMatrix();
@@ -199,6 +192,14 @@ void ofApp::draw(){
     // cam.end();
     ofPopMatrix();
     ofDisableDepthTest();
+
+    mainFbo.end();
+
+    // Add some glitchy effects
+    ofSetColor(255, 255);
+    mainFbo.draw(0, 0);
+
+    
 
 }
 
@@ -366,6 +367,7 @@ void ofApp::handleIncomingOsc() {
                 int i = service_point_clouds.size()-1;
                 service_point_clouds[i].init(ofGetWidth(), ofGetHeight());
                 service_point_clouds[i].addRandomPointToWhiteCloseTo(location_3dpositions[packet.location_index]);
+                // service_point_clouds[i].generateRandomCloud();
             }
             packets.push_back(packet);
             if(visdata == VisData::LOCATION) {

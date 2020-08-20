@@ -1,6 +1,6 @@
 obj/linux64/Release/src/StatObject.o: \
- /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/StatObject.cpp \
- /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/StatObject.h \
+ /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/StatObject.cpp \
+ /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/StatObject.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/ofMain.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/utils/ofConstants.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/tess2/include/tesselator.h \
@@ -560,7 +560,7 @@ obj/linux64/Release/src/StatObject.o: \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/3d/ofCamera.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/3d/ofEasyCam.h
 
-/home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/StatObject.h:
+/home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/StatObject.h:
 
 /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/ofMain.h:
 

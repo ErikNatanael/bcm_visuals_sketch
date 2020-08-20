@@ -21,7 +21,7 @@ void PointCloud::init(int w, int h) {
     lineMeshBlack.setMode(OF_PRIMITIVE_LINES); // OF_PRIMITIVE_LINE_STRIP is another option
     
 	  glEnable(GL_POINT_SMOOTH); // use circular points instead of square points
-    glPointSize(1); // make the points bigger
+    glPointSize(2); // make the points bigger
     
     clear();
     
@@ -46,12 +46,12 @@ void PointCloud::init(int w, int h) {
   void PointCloud::addRandomPointToWhiteCloseTo(glm::vec3 point) {
     glm::vec3 rand_point = randomSphere(ofRandom(100));
     glm::vec3 pos = point + rand_point;
-    meshWhite.addColor(ofColor(255, 50));
+    meshWhite.addColor(ofColor(255, 255));
     meshWhite.addVertex(pos);
     pointsWhite.push_back(pos);
-    meshBlack.addColor(ofColor(0, 50));
-    meshBlack.addVertex(pos);
-    pointsBlack.push_back(pos);
+    // meshBlack.addColor(ofColor(0, 50));
+    // meshBlack.addVertex(pos);
+    // pointsBlack.push_back(pos);
   }
 
   void PointCloud::addPointToWhite(glm::vec3 p) {

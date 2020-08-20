@@ -1,5 +1,5 @@
 obj/linux64/Release/src/main.o: \
- /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/main.cpp \
+ /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/main.cpp \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/ofMain.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/utils/ofConstants.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/tess2/include/tesselator.h \
@@ -558,7 +558,7 @@ obj/linux64/Release/src/main.o: \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/3d/of3dUtils.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/3d/ofCamera.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/3d/ofEasyCam.h \
- /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/ofApp.h \
+ /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/ofApp.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/addons/ofxOsc/src/ofxOsc.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/addons/ofxOsc/src/ofxOscArg.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/addons/ofxOsc/src/ofxOscMessage.h \
@@ -575,8 +575,8 @@ obj/linux64/Release/src/main.o: \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h \
  /home/erik/code/of_v0.11.0_linux64gcc6_release/addons/ofxOsc/libs/oscpack/src/osc/../ip/PacketListener.h \
- /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/StatObject.h \
- /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/PointCloud.h
+ /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/StatObject.h \
+ /home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/PointCloud.h
 
 /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/ofMain.h:
 
@@ -1728,7 +1728,7 @@ obj/linux64/Release/src/main.o: \
 
 /home/erik/code/of_v0.11.0_linux64gcc6_release/libs/openFrameworks/3d/ofEasyCam.h:
 
-/home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/ofApp.h:
+/home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/ofApp.h:
 
 /home/erik/code/of_v0.11.0_linux64gcc6_release/addons/ofxOsc/src/ofxOsc.h:
 
@@ -1762,6 +1762,6 @@ obj/linux64/Release/src/main.o: \
 
 /home/erik/code/of_v0.11.0_linux64gcc6_release/addons/ofxOsc/libs/oscpack/src/osc/../ip/PacketListener.h:
 
-/home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/StatObject.h:
+/home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/StatObject.h:
 
-/home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals/src/PointCloud.h:
+/home/erik/code/of_v0.11.0_linux64gcc6_release/apps/myApps/bcm_visuals_sketch/src/PointCloud.h:
