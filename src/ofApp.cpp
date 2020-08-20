@@ -9,7 +9,7 @@ void ofApp::setup(){
     
     ofSetVerticalSync(true);
 
-    mainFbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA32F);
+    mainFbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
 }
 
 //--------------------------------------------------------------
@@ -32,12 +32,14 @@ void ofApp::update(){
 void ofApp::draw(){
     ofBackground(0);
     mainFbo.begin();
-    ofSetColor(0, 50);
+    ofSetColor(0, 10);
     ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
 
     ofEnableBlendMode(OF_BLENDMODE_ALPHA);
 
     string active_name = "~~~";
+
+    float base_alpha = 255;
 
     if(vistype == VisType::TOGETHER) {
         int y = 0;
@@ -62,7 +64,7 @@ void ofApp::draw(){
                     active_y = y;
                     ofSetColor(stat_obj->color);
                 } else {
-                    ofSetColor(0);
+                    ofSetColor(0, base_alpha);
                 }
             } else {
                 ofSetColor(stat_obj->color);
@@ -107,9 +109,9 @@ void ofApp::draw(){
             for(int i = (list->size())-1; i >= 0; i--) {
                 size_t index = list->at(i);
                 if(index == lastActive) {
-                    ofSetColor(255);
+                    ofSetColor(255, base_alpha);
                 } else {
-                    ofSetColor(0);
+                    ofSetColor(0, base_alpha);
                 }
                 float margin = ofClamp(rectangle_size * 0.1, 1, 10);
                 ofDrawRectangle(x, y, rectangle_width, floor(rectangle_size));
@@ -149,9 +151,9 @@ void ofApp::draw(){
                 int y = index * line_height;
                 if(do_filter_services) {
                     if(packets.at(i).service_index == lastActive) {
-                        ofSetColor(255);
+                        ofSetColor(255, base_alpha);
                     } else {
-                        ofSetColor(0);
+                        ofSetColor(0, base_alpha);
                     }
                 } else {
                     // Get the assigned colour
@@ -169,6 +171,19 @@ void ofApp::draw(){
         }
     }
 
+    
+
+    ofSetColor(255);
+    ofDrawRectangle(0, ofGetHeight() - margin_bottom, ofGetWidth(), margin_bottom);
+    ofSetColor(0);
+    font.drawString(active_name, 20, ofGetHeight() - margin_bottom*0.25);
+
+    mainFbo.end();
+
+    // Add some glitchy effects
+    ofSetColor(255, 255);
+    mainFbo.draw(0, 0);
+
     ofEnableDepthTest();
     ofPushMatrix();
     ofSetColor(255, 255);
@@ -184,16 +199,6 @@ void ofApp::draw(){
     // cam.end();
     ofPopMatrix();
     ofDisableDepthTest();
-
-    ofSetColor(255);
-    ofDrawRectangle(0, ofGetHeight() - margin_bottom, ofGetWidth(), margin_bottom);
-    ofSetColor(0);
-    font.drawString(active_name, 20, ofGetHeight() - margin_bottom*0.25);
-
-    mainFbo.end();
-
-    // Add some glitchy effects
-    mainFbo.draw(0, 0);
 
 }
 

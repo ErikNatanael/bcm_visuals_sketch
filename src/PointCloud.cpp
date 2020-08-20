@@ -49,6 +49,9 @@ void PointCloud::init(int w, int h) {
     meshWhite.addColor(ofColor(255, 50));
     meshWhite.addVertex(pos);
     pointsWhite.push_back(pos);
+    meshBlack.addColor(ofColor(0, 50));
+    meshBlack.addVertex(pos);
+    pointsBlack.push_back(pos);
   }
 
   void PointCloud::addPointToWhite(glm::vec3 p) {
